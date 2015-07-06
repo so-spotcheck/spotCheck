@@ -26,4 +26,7 @@
     
     - **Fail** (Student achieves less than 2 of the previous learning objectives)
 
+###Additional Resources:
+
+  - [stackoverflow: Horizontally center a div in a div](http://stackoverflow.com/questions/114543/horizontally-center-a-div-in-a-div)
 
