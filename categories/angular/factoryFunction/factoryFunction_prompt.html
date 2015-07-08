@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js">
+    </script>
+  </head>
+  <body ng-app="myapp">
+
+  <!-- Fix the code below! Clicking the 'Change text' button should utilize the function in 'My Factory' to change 'myData.theText' from 'The old text!' to 'The new text!' -->
+
+    <div ng-controller="MyController" style="text-align: center;">
+      <button ng-click="">Change text</button>
+      <br/><br/>
+      The Text: {{myData.theText}}
+    </div>
+
+    <script>
+      angular.module("myapp", [])
+
+        .controller("MyController", function($scope, $http) {
+
+          $scope.myData = {};
+          $scope.myData.theText = 'The old text!';
+
+        })
+
+        .factory("MyFactory", function() {
+
+          var factoryObj = {};
+
+          factoryObj.updateText = function() {
+             return 'The new text!';
+          };
+
+        });
+
+    </script>
+  </body>
+</html>
