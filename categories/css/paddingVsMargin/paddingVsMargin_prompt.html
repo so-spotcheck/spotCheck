@@ -1,0 +1,41 @@
+<!-- Prompt: 
+
+1) How come the distance between the buttons is 10px? Since the top button has a margin-bottom of 10px and 
+the bottom button has a margin-top of 10px we would expect the distance to be 20px.
+Correct the style so the distance is 20px.
+
+2) Change the style of the buttons to have a 10px distance from the button text to the top and bottom borders
+and 15px to the right and left borders. 
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+
+  button {
+    display: block;
+  }
+
+  .cancel {
+    margin-bottom: 10px;
+  }
+
+  .submit {
+    margin-top: 10px;
+  }
+  
+</style>
+</head>
+
+<body>
+  
+  <form>
+    <textarea placeholder='Your text here...'></textarea>
+    <button class='cancel'>Cancel</button>
+    <button class='submit'>Submit</button>
+  </form>
+  
+</body>
+</html>
