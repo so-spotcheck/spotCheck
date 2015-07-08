@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello React!</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/jsx">
+
+        // Modify the react component below to alert "Hello World" when the Hello component is clicked.
+        // After the alert is in place, add additional logic to hide the element right after the alert.
+
+        var Hello = React.createClass({
+            render: function() {
+                return <div>Hello {this.props.name}</div>;
+            }
+        });
+         
+        React.render(<Hello name="World" />, document.getElementById('container'));
+        
+    </script>
+  </body>
+</html>

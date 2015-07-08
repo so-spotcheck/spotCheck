@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello React!</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/jsx">
+
+        var Hello = React.createClass({
+            getInitialState: function () {
+                return {display: "auto"}
+            },
+            handleClick: function(e) {
+                alert('clicked on hello world');
+                this.setState({display: "none"});
+            },
+            render: function() {
+                return <div style={ this.state } onClick={ this.handleClick }>Hello {this.props.name}</div>;
+            }
+        });
+         
+        React.render(<Hello name="World" />, document.getElementById('container'));
+        
+    </script>
+  </body>
+</html>
