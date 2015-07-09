@@ -1,0 +1,65 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>jQuery idSelector</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        
+        <div class="wrapper">
+          <div>
+            <div>
+              <div>
+                <p class="find-me">I'm the best!</p>
+              </div>
+            </div>
+            <p class="find-me">I guess I'm second best!</p>
+          </div>
+        </div>
+        
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+
+        <script>
+
+          // PROMPT: Implement jQuery with functionality to obtain all elements with a certain class.
+
+          var $ = function (selector) {
+
+            this.length = 0;
+
+            var type = selector.charAt(0);
+            var string = selector.substr(1, selector.length);
+
+            if(type === '.'){
+              var collection = document.getElementsByClassName(string);
+              for (var i = 0; i < collection.length; i++) {
+                this.push(collection[i]);
+              }
+            }
+
+          };
+
+          // Splice is required for the interpreter to recognize the object as an array (without inheriting directly from Array);
+          $.prototype.splice = Array.prototype.splice;
+          $.prototype.push = Array.prototype.push;
+
+          // An example of prototype methods now available on our jQuery collection (array-like structure);
+          $.prototype.deleteSecondItem = function () {
+            delete this["1"];
+            this.length--;
+          }
+          
+          var element = new $('.find-me');
+
+          console.log(element);
+          console.log(element.length);
+          console.log(element.deleteSecondItem());
+          console.log(element);
+          console.log(element.length);
+
+        </script>
+    </body>
+</html>
