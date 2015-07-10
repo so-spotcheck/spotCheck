@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js">
+    </script>
+  </head>
+  <body ng-app="myapp">
+
+    <div ng-controller="MyController" style="text-align: center;">
+      <button ng-click="myData.changeText()">Change text</button>
+      <br/></br>
+      The Text: {{myData.theText}}
+    </div>
+
+    <script>
+      angular.module("myapp", [])
+
+        .controller("MyController", function($scope, $http, MyFactory) {
+
+          $scope.myData = {};
+          $scope.myData.theText = 'The old text!';
+
+          $scope.myData.changeText = function() {
+            $scope.myData.theText = MyFactory.updateText();
+          }
+
+        })
+
+        .factory("MyFactory", function() {
+
+          var factoryObj = {};
+
+          factoryObj.updateText = function() {
+             return 'The new text!';
+          };
+
+          return factoryObj
+
+        });
+
+    </script>
+  </body>
+</html>
