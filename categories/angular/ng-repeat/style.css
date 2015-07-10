@@ -1,0 +1,13 @@
+ul {
+  list-style: none;
+}
+
+h1 {
+  margin-bottom: 5px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: normal;
+}
