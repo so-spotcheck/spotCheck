@@ -1,0 +1,46 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>jQuery idSelector</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        
+        <div class="wrapper">
+          <div>
+            <div>
+              <div>
+                <p class="find-me">I'm the best!</p>
+              </div>
+            </div>
+            <p class="find-me">I guess I'm second best!</p>
+          </div>
+        </div>
+        
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+
+        <script>
+
+          // PROMPT: Implement jQuery with functionality to obtain all elements with a certain class.
+
+          var $ = function (selector) {
+            var array;
+            var type = selector.charAt(0);
+            var string = selector.substr(1, selector.length);
+
+            if (type === '.') {
+              array = document.getElementsByClassName(string);
+            }
+
+            return array;
+          };
+
+          var element = new $('.find-me');
+          console.log(element);
+
+        </script>
+    </body>
+</html>
