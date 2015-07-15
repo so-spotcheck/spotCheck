@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Dynamic Binding</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1 style="text-align: center;">Crazy Letters</h1>
+
+    <input style="display: block; margin-left: auto; margin-right: auto; width: 50px;" id="keyInput">
+
+    <script>
+      $('#keyInput').bind('keypress', function(e) {
+
+        // Convert keycode registered on press back to letter/number
+        var value = String.fromCharCode(e.keyCode);
+
+        // Set random x and y coordinates based on page dimenions
+        var posx = (Math.random() * ($(document).width())).toFixed();
+        var posy = (Math.random() * ($(document).height())).toFixed();
+
+        // Create a new jQuery div with the pressed character, and insert it into a random spot on the page
+        var newDiv = $('<div></div>').text(value);
+        newDiv.css({
+            'position':'absolute',
+            'left':posx+'px',
+            'top':posy+'px',
+        }).appendTo('body');
+
+      });
+
+      // Add dynamic element binding to alert the pressed character upon it being clicked
+      $('body').on('click', 'div', function(e) {
+        var text = $(event.target).text();
+        alert(text);
+      });
+
+    </script>
+  </body>
+</html>
